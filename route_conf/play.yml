@@ -3,7 +3,10 @@
 - name: Set static route
   connection: local
   gather_facts: yes
-  hosts: localhost
+  # defined new variable, which tells the group or host where to start playbook
+  # use command:
+  #   ansible-playbook play.yml -i inventory/inventory --extra-vars "remote_vms"
+  hosts: "{{ host_var | default('local') }}"
   tasks: 
     - import_role:
         name: set_route

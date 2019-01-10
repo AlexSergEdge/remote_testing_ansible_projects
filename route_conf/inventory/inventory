@@ -1,2 +1,5 @@
 [local]
 localhost ansible_connection=local
+
+[remote_vms]
+192.168.10.20 ansible_ssh_pass=vagrant ansible_ssh_user=vagrant

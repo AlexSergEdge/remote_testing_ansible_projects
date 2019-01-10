@@ -19,6 +19,19 @@
 - debug: 
     msg: "{{ after_result }}"
 
+# Templating test to use with different inventory variables
+- name: Template python test
+  template:
+    src: check_route_set.py.j2
+    dest: "{{ playbook_dir }}/roles/set_route/files/check_route_set.py"
+  delegate_to: localhost
+  
+- name: Template python test
+  template:
+    src: check_route_set.sh.j2
+    dest: "{{ playbook_dir }}/roles/set_route/files/check_route_set.sh"
+  delegate_to: localhost
+
 # Test using python script (no pytest)
 - name: Test using python script 
   script: check_route_set.py "{{ after_result }}"

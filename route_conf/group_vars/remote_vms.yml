@@ -1,4 +1,4 @@
-net_ip: 192.168.2.0
+net_ip: 192.168.3.0
 ip_mask_len: 24
 ip_mask_full: 255.255.255.0
 gateway: 192.168.122.1
